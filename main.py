@@ -34,8 +34,8 @@ for filename in glob.glob('D:/Users/Админ/Downloads/egrul/*.json'):
             okved = sd['КодОКВЭД']
             print(f'Код', okved)
             # print(type(okved))
-            result = re.findall(r'([\d]{1,3})+(\.[\d]{1,3}|){1,}', okved)
-            if okved == result:
+            # result = re.findall(r'[0-9-.]+\.[0-9-.]', okved)
+            if okved == '61' or okved =='61.1' or okved =='61.10' or okved =='61.10.1' or okved =='61.10.2' or okved =='61.10.3' or okved =='61.10.4' or okved =='61.10.5' or okved =='61.10.6' or okved =='61.10.7' or okved =='61.10.8' or okved =='61.10.9' or okved =='61.2' or okved =='61.20' or okved =='61.20.1' or okved =='61.20.2' or okved =='61.20.3' or okved =='61.20.4' or okved =='61.20.5' or okved =='61.3' or okved =='61.30' or okved =='61.30.1'  or okved ==' 61.30.2' or okved ==' 61.9' or okved =='61.90':
                 print(f'Наш код', i)
                 print(count)
                 print(type(i))
