@@ -19,10 +19,8 @@ DB_HOST = "127.0.0.1"
 #
 # #Параметры подключения к Postgresql
 DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:5432/{DB_NAME}"
-# print(DATABASE_URL)
-# a = glob.glob('E:/datasets/cars.json')
-#
-filesList = []
+
+# filesList = []
 for filename in glob.glob('D:/Users/Админ/Downloads/egrul/*.json'):
     dataf = pd.read_json(filename, encoding="utf-8")
     # with open(filename, "r", encoding="utf-8") as file:
@@ -41,11 +39,10 @@ for filename in glob.glob('D:/Users/Админ/Downloads/egrul/*.json'):
                 print(f'Наш код', i)
                 print(count)
                 print(type(i))
-                # s = pd.DataFrame.from_dict(i, orient='tight')
                 s = dataf.iloc[[count]]
                 print(f'Датафрейм', s)
                 engine = create_engine(DATABASE_URL)
-                s[['ogrn', 'inn', 'kpp', 'name', 'full_name']].to_sql("hw_test25", engine, if_exists='append')
+                s[['ogrn', 'inn', 'kpp', 'name', 'full_name']].to_sql("telecom_companys", engine, if_exists='append')
                 # print("Отправлен в бд")
                 print('Наш код для БД- Запись в БД отправлена.')
                 # print(s)
