@@ -81,7 +81,7 @@ print("Отправлен список в бд")
 #                  # inn=record['inn'],
 #                  kpp=record['kpp'],
 #                  full_name=record['full_name'])
-#
+
 
 
 
