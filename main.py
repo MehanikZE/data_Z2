@@ -57,7 +57,7 @@ for filename in glob.glob('D:/Users/Админ/Downloads/egrul/*.json'):
             # print('Запись ОКВЭД не найдена')
 
 
-print("Отправлен в бд")
+print("Отправлен список в бд")
 
 # print("Подсчет выполнен")
 
