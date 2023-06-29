@@ -60,7 +60,6 @@ for filename in glob.glob('D:/Users/Админ/Downloads/egrul/*.json'):
 print("Отправлен список в бд")
 
 # print("Подсчет выполнен")
-
 # #
 # class Base(DeclarativeBase):
 #     pass
