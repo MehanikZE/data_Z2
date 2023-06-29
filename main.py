@@ -32,24 +32,31 @@ for filename in glob.glob('D:/Users/Админ/Downloads/egrul/*.json'):
             t = w['СвОКВЭДДоп']
             sd = t[1]
             okved = sd['КодОКВЭД']
-            print(f'Код', okved)
+            # print(f'Код', okved)
             # print(type(okved))
             # result = re.findall(r'[0-9-.]+\.[0-9-.]', okved)
             if okved == '61' or okved =='61.1' or okved =='61.10' or okved =='61.10.1' or okved =='61.10.2' or okved =='61.10.3' or okved =='61.10.4' or okved =='61.10.5' or okved =='61.10.6' or okved =='61.10.7' or okved =='61.10.8' or okved =='61.10.9' or okved =='61.2' or okved =='61.20' or okved =='61.20.1' or okved =='61.20.2' or okved =='61.20.3' or okved =='61.20.4' or okved =='61.20.5' or okved =='61.3' or okved =='61.30' or okved =='61.30.1'  or okved ==' 61.30.2' or okved ==' 61.9' or okved =='61.90':
-                print(f'Наш код', i)
-                print(count)
-                print(type(i))
+                # print(f'Наш код', i)
+                # print(count)
+                okv_d = [okved]
+                # print(type(i))
                 s = dataf.iloc[[count]]
                 print(f'Датафрейм', s)
+                s['okvd']= okv_d
+                print(f'Сплюсованный датафрейм', s)
                 engine = create_engine(DATABASE_URL)
-                s[['ogrn', 'inn', 'kpp', 'name', 'full_name']].to_sql("telecom_companys", engine, if_exists='append')
+
+                s[['ogrn', 'inn', 'kpp', 'okvd', 'name', 'full_name']].to_sql("telecom_companys4", engine, if_exists='append')
+
                 # print("Отправлен в бд")
                 print('Наш код для БД- Запись в БД отправлена.')
                 # print(s)
             else:
-                print('Не наш оквэд')
+                ...
+                # print('Не наш оквэд')
         except:
-            print('Запись ОКВЭД не найдена')
+            ...
+            # print('Запись ОКВЭД не найдена')
 
 
 print("Отправлен в бд")
