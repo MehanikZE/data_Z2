@@ -25,8 +25,8 @@ for filename in glob.glob('D:/Users/Админ/Downloads/egrul/*.json'):
     dataf = pd.read_json(filename, encoding="utf-8")
     # with open(filename, "r", encoding="utf-8") as file:
     #    filesList.append(json.load(file))
-    kpp = dataf['data']
-    for count, i in enumerate(kpp):
+    kp_p = dataf['data']
+    for count, i in enumerate(kp_p):
         w = i.setdefault('СвОКВЭД')
         try:
             t = w['СвОКВЭДДоп']
@@ -43,11 +43,9 @@ for filename in glob.glob('D:/Users/Админ/Downloads/egrul/*.json'):
                 s = dataf.iloc[[count]]
                 print(f'Датафрейм', s)
                 s['okvd']= okv_d
-                print(f'Сплюсованный датафрейм', s)
+                # print(f'Сплюсованный датафрейм', s)
                 engine = create_engine(DATABASE_URL)
-
-                s[['ogrn', 'inn', 'kpp', 'okvd', 'name', 'full_name']].to_sql("telecom_companys4", engine, if_exists='append')
-
+                s[['ogrn', 'inn', 'kpp', 'okvd', 'name', 'full_name']].to_sql("telecom_companys", engine, if_exists='append')
                 # print("Отправлен в бд")
                 print('Наш код для БД- Запись в БД отправлена.')
                 # print(s)
